@@ -1,0 +1,26 @@
+<html>
+    {% block styles %}
+        <link type="text/css" rel = "stylesheet" href="{{ url_for('static', filename='wordstyle.css') }}" />
+        <script src="{{url_for('static', filename='dictionary_definition.js')}}", defer></script>
+    {% endblock %}
+    
+    <body>
+        {% block navbar %}
+        <nav id = "head">
+            <h1>Word List Program for {{name}}</h1>
+        </nav>
+        {% endblock %}
+        
+        <div id = "content">
+            {% block content %}
+            default content
+            {% endblock %}
+            <p class="e">{{ e }} </p>
+       </div>
+        
+        <footer id = "foot" >
+            <a id="foot_github" href="https://github.com/MorrisOmbiro/word_app">Github Repo.</p>
+        </footer>
+    </body>
+    
+</html>

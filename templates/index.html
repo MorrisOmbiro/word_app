@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/words" method="post">
+        {{ form.hidden_tag() }}<!--Generates a hidden field that includes a token that is used to protect from against CSRF attacks-->
+        {{ form.avail_letters.label }}
+        {{ form.avail_letters }}
+        {{message}}
+        <br>
+        <br>
+        {{form.pattern.label}}
+        {{form.pattern}}
+        {{message}}
+        <br>
+        <br>
+        {{form.choose_length.label}}
+        {{form.choose_length}}
+        <br>
+        <br>
+        {{ form.submit() }}
+    </form>
+    
+{% endblock %}
+

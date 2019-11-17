@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    {% for word in wordlist: %}
+    <div class="wordbox">
+        <button id="{{word}}" class = "word_btn" onclick="get_def(this)">
+        {{ word }}
+        </button>
+    </div>
+    {% endfor %}
+    <div id="pop_up">
+        <div id="info">
+            <button id="close" onclick="close_popup()">&#x2715;</button>
+            <p id="defs"></p>
+        </div>
+    </div> 
+</main>
+{% endblock %}
